@@ -1,0 +1,43 @@
+﻿@model Northwind.Entities.Concrete.Product
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-controller="Product" asp-action="Add" method="post">
+    <div class="form-group row mt-2">
+        <label asp-for="ProductName" class="form-label col-md-4">Ürün Adı</label>
+        <div class="col-md-8">
+            <input type="text" class="form-control" asp-for="ProductName" placeholder="Ürün adını giriniz" />
+            <span asp-validation-for="ProductName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row mt-2">
+        <label asp-for="UnitPrice" class="form-label col-md-4">Birim Fiyatı</label>
+        <div class="col-md-8">
+            <input type="text" class="form-control" asp-for="UnitPrice" placeholder="Birim fiyatını giriniz" />
+            <span asp-validation-for="UnitPrice" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row mt-2">
+        <label asp-for="UnitsInStock" class="form-label col-md-4">Stok Adedi</label>
+        <div class="col-md-8">
+            <input type="text" class="form-control" asp-for="UnitsInStock" placeholder="Stok adedini giriniz" />
+            @*<span asp-validation-for="UnitsInStock" class="text-danger"></span>*@
+        </div>
+    </div>
+
+    <div class="form-group row mt-2">
+        <label asp-for="QuantityPerUnit" class="form-label col-md-4">Birim fiyatı</label>
+        <div class="col-md-8">
+            <input type="text" class="form-control" asp-for="QuantityPerUnit" placeholder="Birim fiyatı giriniz" />
+            <span asp-validation-for="QuantityPerUnit" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group mt-3 d-grid gap-2 col-4 mx-auto">
+        <button type="submit" class="btn btn-primary">Ekle</button>
+    </div>
+</form>

@@ -1,0 +1,24 @@
+﻿@model List<Northwind.Entities.Concrete.Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <table class="table table-bordered table-hover table-responsive">
+        <thead>
+            <tr>
+                <th>CategoryName</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td>@item.CategoryName</td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>
+

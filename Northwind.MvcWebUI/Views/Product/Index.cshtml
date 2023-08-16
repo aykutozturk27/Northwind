@@ -1,0 +1,35 @@
+﻿@model List<Northwind.Entities.Concrete.Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="form-group">
+        <a class="btn btn-success mt-3 d-grid gap-2 col-4 mx-auto" asp-action="Add">Ekle</a>
+    </div>
+    <div class="form-group mt-2">
+
+        <table class="table table-bordered table-hover table-responsive">
+            <thead>
+                <tr>
+                    <th>ProductName</th>
+                    <th>UnitPrice</th>
+                    <th>UnitsInStock</th>
+                    <th>QuantityPerUnit</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td>@item.UnitPrice</td>
+                        <td>@item.UnitsInStock</td>
+                        <td>@item.QuantityPerUnit</td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+    </div>
+</div>
