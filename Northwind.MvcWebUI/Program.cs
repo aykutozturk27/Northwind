@@ -12,6 +12,7 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
 {
     builder.RegisterModule(new BusinessModule());
     builder.RegisterModule(new ValidationModule());
+    builder.RegisterModule(new AutoMapperModule());
 });
 
 builder.Services.AddControllersWithViews();

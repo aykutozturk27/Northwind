@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Northwind.Business.Abstract;
 using Northwind.Entities.Concrete;
+using Northwind.Entities.Dtos;
 
 namespace Northwind.MvcWebUI.Controllers
 {
@@ -26,10 +27,20 @@ namespace Northwind.MvcWebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(Product product)
+        public IActionResult Add(ProductAddDto productAddDto)
         {
             if (ModelState.IsValid)
             {
+                var product = new Product
+                {
+                    ProductName = productAddDto.ProductName,
+                    UnitPrice = productAddDto.UnitPrice,
+                    QuantityPerUnit = productAddDto.QuantityPerUnit,
+                    UnitsInStock = productAddDto.UnitsInStock,
+                    Category = productAddDto.Category,
+                    CategoryID = productAddDto.CategoryID
+                };
+
                 var addedProduct = _productService.Add(product);
                 if (addedProduct != null)
                 {
@@ -37,7 +48,7 @@ namespace Northwind.MvcWebUI.Controllers
                 }
                 return View();
             }
-            return View(product);
+            return View(productAddDto);
         }
     }
 }

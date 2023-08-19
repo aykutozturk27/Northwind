@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 using Northwind.Business.Contants;
-using Northwind.Entities.Concrete;
+using Northwind.Entities.Dtos;
 
 namespace Northwind.Business.ValidationRules.FluentValidation
 {
-    public class ProductValidator : AbstractValidator<Product>
+    public class ProductValidator : AbstractValidator<ProductAddDto>
     {
         public ProductValidator()
         {

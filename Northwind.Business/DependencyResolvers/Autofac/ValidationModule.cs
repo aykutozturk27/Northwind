@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using FluentValidation;
 using Northwind.Business.ValidationRules.FluentValidation;
-using Northwind.Entities.Concrete;
+using Northwind.Entities.Dtos;
 
 namespace Northwind.Business.DependencyResolvers.Autofac
 {
@@ -9,7 +9,7 @@ namespace Northwind.Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<ProductValidator>().As<IValidator<Product>>().SingleInstance();
+            builder.RegisterType<ProductValidator>().As<IValidator<ProductAddDto>>().SingleInstance();
         }
     }
 }

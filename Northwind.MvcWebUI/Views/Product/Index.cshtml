@@ -1,4 +1,4 @@
-﻿@model List<Northwind.Entities.Concrete.Product>
+﻿@model ProductListDto
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -19,7 +19,7 @@
                     <th>QuantityPerUnit</th>
                 </tr>
             </thead>
-            @foreach (var item in Model)
+            @foreach (var item in Model.Products)
             {
                 <tbody>
                     <tr>

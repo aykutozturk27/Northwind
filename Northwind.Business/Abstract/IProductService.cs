@@ -1,4 +1,5 @@
 ﻿using Northwind.Entities.Concrete;
+using Northwind.Entities.Dtos;
 
 namespace Northwind.Business.Abstract
 {
@@ -6,7 +7,10 @@ namespace Northwind.Business.Abstract
     {
         Task<List<Product>> GetAllAsync();
 
-        List<Product> GetAll();
-        Product Add(Product product);
+        //List<Product> GetAll();
+        ProductListDto GetAll();
+
+        //Product Add(Product product);
+        ProductAddDto Add(Product product);
     }
 }
